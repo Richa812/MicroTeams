@@ -27,7 +27,7 @@
                 </div>
             </div>
           <div class="main__controls">
-              <div class="main__controls__block">
+              
                   <div  onclick="muteUnmute()" class="main__controls__button  main__mute_button">
                       <i class="fas fa-microphone"></i>
                       <span>Mute</span>
@@ -40,22 +40,31 @@
                         <i class="fas fa-phone-slash  disconnect"></i>
                        <span class="leave_meeting">Leave</span>
                     </div>
-                  </div>
-                </div>
+
+                    <div class="main__controls__button"  id="Invite">
+                            <i class="fas fa-user-plus"></i>
+                            <span>Add</span>
+                    </div>
+                  
+            </div>
         </div>
+      
 
         <div class="main__right">
             <div class="main__header">
               <h5>Chat-Box</h5>
              </div>
              <div class="main__chat__window">
-                <ul  class="messages">
-      
-                </ul>
+                <div class="messages">
+                </div>
              </div>
              <div class="main__message__container">
-                 <input id="chat_message" type="text" placeholder="Type message here...">
-             </div>
+                 <input id="chat_message" type="text" autocomplete="off" placeholder="Type message here...">
+                 <div id="send" class="main__controls__button">
+                    <i class="fas fa-paper-plane" aria-hidden="true"></i>
+                  </div>
+             
+            </div>
         </div>
     </div>
 
