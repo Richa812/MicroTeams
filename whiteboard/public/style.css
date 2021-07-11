@@ -19,21 +19,25 @@
   .whiteboard {
     height: 100%;
     width: 100%;
+    margin: 1rem;
     position: absolute;
-    left: 0;
+    cursor: url('..//office3.ico'), default;
+    /*left: 0;
     right: 0;
     bottom: 0;
-    top: 0;
+    top: 0;*/
   }
   
   .colors {
     position: fixed;
+    padding:1rem;
   }
   
   .color {
     display: inline-block;
     height: 48px;
     width: 48px;
+    border-radius: 1rem;
   }
   
   .color.black { background-color: black; }
@@ -41,3 +45,5 @@
   .color.green { background-color: green; }
   .color.blue { background-color: blue; }
   .color.yellow { background-color: yellow; }
+
+  
