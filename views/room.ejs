@@ -23,17 +23,23 @@
  
 
     <div class="main">
+
        
        <div class="main__left">
+        <div class="header">
+            <h1>MicroTeams</h1>
+          
+        </div>
           
             <div class="main__videos">
                 <div id="video-grid">
 
                 </div>
             </div>
+            <div class="buttons">
           <div class="main__controls">
               
-                  <div  onclick="muteUnmute()" class="main__controls__button  main__mute_button">
+                  <div  onclick="muteUnmute()" class="main__controls__button  main__mute_button" >
                       <i  title="audio" class="fas fa-microphone"></i>
                     
                   </div>
@@ -41,11 +47,25 @@
                       <i   title="video" class="fas fa-video"></i>
                      
                   </div>
-                   <div class="main__controls__button leave_meeting">
+                  
+                  
+                    <div class="main__controls__button"  id="whiteboard">
+                      <a href="https://white-board-microteams.herokuapp.com/" target="_blank"> <i  title="whiteboard" class="fas fa-chalkboard"></i></a> 
+                     </div>
+
+                     <div class="main__controls__button leave_meeting" style="color: brown;">
                         <i  title="leave" class="fas fa-phone-slash  disconnect"></i>
                        
                     </div>
-                    <div class="main__controls__button open_chat">
+
+                     <div class="main__controls__button screenshare" >
+                        <i  title="start sharing" class="fas fa-desktop"></i>
+                     </div>
+                     
+                     <div class="main__controls__button stopshare" >
+                        <i  title="stop sharing" class="fas fa-stop"></i>
+                     </div>
+                     <div class="main__controls__button open_chat">
                         <i   title="chat" class="fas fa-comment-dots"></i>
                        
                     </div>
@@ -54,17 +74,14 @@
                             <i  title="add people" class="fas fa-user-plus"></i>
                          
                     </div>
-                    <div class="main__controls__button"  id="whiteboard">
-                      <a href="https://white-board-microteams.herokuapp.com/" target="_blank"> <i  title="whiteboard" class="fas fa-chalkboard"></i></a> 
-                     
-                </div>
+               </div>
             </div>
         </div>
       
 
         <div class="main__right">
             <div class="main__header">
-              <h5><b>Meeting Chat</b></h5>
+              <h4><b>Meeting Chat</b></h4>
               <div  title="close right pane" class="close_chat">
                 <i class="fas fa-arrow-right"></i>
                
