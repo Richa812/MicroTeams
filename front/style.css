@@ -12,10 +12,15 @@
   font-family: 'PT Serif', serif;
 }
 
+html{
+    scroll-behavior: smooth;
+}
 * {
   margin: 0;
   padding: 0;
+  border: 0;
 }
+
 
 .header{
     padding-left: 1rem;
@@ -38,11 +43,13 @@
 .learnmore p{
     margin-left: 34vw;
 }
-.main{
-    display:flex;
+ 
+.first{
+    display: flex;
+    background-color: rgb(238, 234, 234);
 }
 .text{
-    padding-left: 7rem;
+    padding-left: 9rem;
     padding-top: 8rem;
 }
 .text h1{
@@ -50,10 +57,14 @@
     font-size:55px;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
-.text p{
+.text h2{
    
    
     font-size: 40px;
+}
+.text p{
+    font-size: 25px;
+
 }
 .links{
     display: inline-block;
@@ -69,26 +80,189 @@
     height: 30px;
 }
 .button{
-    background-color: var(--primary-color);
+    background-color: rgb(180, 140, 88);
     box-shadow: 0 0 50px -20px #000;
-    transition: transform .2s;
+    /* transition: transform .2s; */
     border: none;
     color: white;
-    padding: 15px 32px;
+    border-radius: 30px;
+    padding: 10px 30px;
     text-align: center;
     text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
+    display:flex;
+    font-size: 24px;
     margin: 4px 3px;
-    cursor: pointer;
+    /* cursor: pointer; */
+    /* box-sizing: border-box; */
 }
 .button:hover{
-    transform: scale(1.5);
+    transform: scale(1.2);
 
 }
-.images{
+ .first.images{
 
  
-    margin-top: 10vh;
+    margin-top: 5vh;
     margin-left:10vw;
 }
+.second{
+    display: flex;
+    margin-top: 5vh;
+}
+.second .text {
+    padding-top: 10rem;
+    padding-left: 16rem;
+    padding-right: 5rem;
+    flex-direction: column;
+    flex: 0.7;
+}
+.second .images{
+    margin-left:2vw;
+    display: flex;
+    width: 45vw;
+}
+
+.third{
+    display: flex;
+    background-image: url('/front/assets/pic5.jpeg');
+    background-size: cover;
+}
+.third p{
+    font-size: 20px;
+}
+/* .footer{ 
+    display: flex;
+    height: 5vh;
+    background-color:rgb(197, 197, 138);
+    margin-top:9rem;
+    justify-content: center;
+    align-items: center;
+}*/
+
+footer {
+    background-color: #c9c9c8;
+    box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.12);
+    box-sizing: border-box;
+    width: 100%;
+    text-align: left;
+    font: bold 16px sans-serif;
+    padding: 55px 50px;
+    margin-top: 80px;
+    bottom: 0;
+    color: #fff
+}
+
+.footer-navigation h3 {
+    margin: 0;
+    font: normal 36px Cookie, cursive;
+    margin-bottom: 20px;
+    color: #fff
+}
+
+.footer-navigation h3 a {
+    text-decoration: none;
+    color: #fff
+}
+
+.footer-navigation h3 span {
+    color: #5383d3
+}
+
+.footer-navigation p.links a {
+    color: #fff;
+    text-decoration: none
+}
+
+.footer-navigation p.company-name {
+    color: #8f9296;
+    font-size: 14px;
+    font-weight: normal;
+    margin-top: 20px
+}
+
+@media (max-width:767px) {
+    .footer-contacts {
+        margin: 30px 0
+    }
+}
+
+.footer-contacts p {
+    display: inline-block;
+    color: #ffffff;
+    vertical-align: middle
+}
+
+.footer-contacts p a {
+    color: #5383d3;
+    text-decoration: none
+}
+
+.fa.footer-contacts-icon {
+    background-color: #33383b;
+    color: #fff;
+    font-size: 18px;
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 38px;
+    margin: 10px 15px 10px 0
+}
+
+span.new-line-span {
+    display: block;
+    font-weight: normal;
+    display: block;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 2
+}
+
+.footer-about h4 {
+    display: block;
+    color: #fff;
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 20px
+}
+
+.footer-about p {
+    line-height: 20px;
+    color: #92999f;
+    font-size: 13px;
+    font-weight: normal;
+    margin: 0
+}
+
+div.social-links {
+    margin-top: 20px;
+    color: #fff
+}
+
+.social-links a {
+    display: inline-block;
+    width: 35px;
+    height: 35px;
+    cursor: pointer;
+    background-color: #0d0e0d;
+    border-radius: 2px;
+    font-size: 20px;
+    color: #ffffff;
+    text-align: center;
+    line-height: 35px;
+    margin-right: 5px;
+    margin-bottom: 5px
+}
+
+.footer {
+    bottom: 0;
+    position: relative
+}
+
+body {
+    background: #eee
+}
+
+
+
+
