@@ -113,10 +113,10 @@ input {
     color:black;
     font-size: 12px;
 
-    border-bottom: 2px solid transparent;
+    border-bottom: 2px var(--primary-color);
     border-top-left-radius: 2%;
     border-top-right-radius: 2%;
-    border-image:var(--primary-color);
+  
 }
 
 .button_container {
@@ -129,21 +129,25 @@ input {
     float: left;
 
     margin-top: 8vh;
-    margin-left: 5vw;
+    margin-left: 4vw;
 }
 
 .button_container button {
     background-color: var(--primary-color);
     width: max-content;
+     /* border-radius: 18px;  */
     border: none;
     color: white;
     padding: 15px 20px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
-    font-size: 16px;
-    margin: 4px 5px;
+    font-size: 23px;
+    margin: 2px 5px;
     cursor: pointer;
+}
+.button_container button:hover{
+    transform: scale(1.2);
 }
 .signup{
     margin-left: 20px;
