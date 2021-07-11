@@ -23,20 +23,27 @@
             </h2>
             <div class="links">
                 <p>Start a new meeting</p>
-                <a  class="button" href="https://sleepy-springs-59737.herokuapp.com/" ><i style="margin-right: 3px; justify-content: center; align-items: center;" class="fas fa-plus"></i>New Meeting</a>
-                <p>Or Join with room-link</p>
+                <a  class="button" href="https://sleepy-springs-59737.herokuapp.com/" ><i style="margin-right: 3px; justify-content: center;    align-items: center;" class="fas fa-plus"></i>New Meeting</a>
+                <p>Or Join with a room-code</p>
                 <div class="join">
-                    <form>
-                     <input id="myURL" name="myURL" type="url" class="inp" placeholder="Enter room-link" required>
-                     <button>Submit</button>
-                     <a  class="button"  class="video-call">Join-meet</a>
-                    </form>
+                  
+                      <input type="text" class="inp" id="text" placeholder="enter room-code"/>
+                     <input type="button" class="button" id="btn" value="Submit" onClick="javascript: window.open('https://sleepy-springs-59737.herokuapp.com' + document.getElementById('text').value);" />
                 </div>
             </div>
         </div>
         <div class="images">
-            <img src="..//assets/pic4.jpeg" height="60%" width="70%">
-            
+            <div class="image-stack">
+                <div class="image-stack__item image-stack__item--top">
+                  <img src="..//assets/img3.jpeg" alt="">
+                </div>
+                <div class="image-stack__item image-stack__item--bottom">
+                  <img src="..//assets/img2.jpeg" alt="">
+                </div>
+              </div>
+         
+
+         
         </div>
        
     </div>
