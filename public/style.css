@@ -1,3 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=PT+Serif&display=swap');
+
+:root {
+  --main-darklg: #1d2635;
+  --main-dark: #161d29;
+  --primary-color: #1c2dc5;
+  --main-light: #b0b1b4;
+  
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
 body{
     padding: 0;
     margin: 0;
@@ -7,32 +21,45 @@ body{
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
+  
 }
 
+.header{
+ padding-left: 1rem;
+  display: flex;
+  background-color:var(--primary-color);
+  color: white;
+  height: 10vh ;
+  justify-content: center;
+  align-items: center;
+ 
+}
 
 .main{
     overflow:hidden;
     height: 100vh;
     display: flex;
+    background-color: rgb(231, 229, 229); 
 }
 
 .main__left{
-    flex: 0.8;
+    flex: 1;
     display: flex;
     flex-direction: column;
 }
 
 .main__right{
-    flex:0.2;
-    display: flex;
+   flex:0.3;
+    display: none;
     flex-direction:column ;
-    background-color: rgb(54, 51, 51);
-    border-left: 1px solid #151516;
+    background-color:var(--main-light);
+    /* border-left: 1px solid #151516; */
+    box-shadow: 0 0 50px -20px rgb(90, 89, 89);
 }
 
 .main__videos{
     flex-grow: 1;
-    background-color: rgb(80, 71, 71);
+   
     display: flex;
     justify-content: center;
     align-items: center;
@@ -42,66 +69,85 @@ body{
 
   
 video {
-    height: 300px;
-    border-radius: 1rem;
-    margin: 0.5rem;
-    width: 400px;
+   
+    height: 350px;
+    border-radius: 0.5rem;
+    margin: 0.2rem;
+    width: 450px;
+    
     object-fit: cover;
     transform: rotateY(180deg);
     -webkit-transform: rotateY(180deg);
     -moz-transform: rotateY(180deg);
   }
 
+  video:hover{
+      border-color: blue;
+  }
 
-
+.buttons{
+  background-color: transparent;
+  justify-content: center;
+  align-items: center;
+}
 .main__controls{
 display:flex;
-background-color:black;
+background-color:rgb(173, 173, 171);
 
 
-justify-content: center;
-padding:5px;
+
+box-shadow: 0 0 50px -20px rgb(37, 37, 37);
+/* border-radius: 15px; */
+justify-content:center;
+
+/* margin-bottom: 1.0vh; */
+height: 9.1vh;
+
 
 }
 
-.main__controls__block{
-    display: flex;
-}
+
 
 .main__controls__button{
     display: flex;
-    color:white;
+    
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 8px 10px;
-    min-width: 80px;
+    padding: 10px 10px;
+    min-width: 90px;
     cursor: pointer;
-}
-
-.main__controls__button i{
-    font-size: 24px;
-}
-
-
-.main__controls__button:hover{
-    background-color: rgb(96, 96, 102);
-    border-radius: 15px;
-}
-
-.disconnect{
-    color: red;
+   
+    
 }
 
 .leave_meeting{
-    color: red;
+   
+  color: rgb(133, 34, 34);
 }
+
+
+.main__controls__button i{
+    background-color: rgb(45, 115, 207); color: white;
+    font-size: 35px;
+    border-radius: 30px;
+   padding: 0.7rem;
+}
+
+.main__controls__button i:hover{
+    transform: scale(1.3);
+}
+
+
+
 
 
 .main__header{
-    color:burlywood;
-    text-align: center;
+    padding: 2.5rem;
+    color:white;
+    display: flex;  
 }
+
 
 .main__chat__window{
     flex-grow:1;
@@ -109,20 +155,43 @@ padding:5px;
 }
 
 .main__message__container{
-    padding: 22px 12px;
+    padding: 10px 12px;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 .main__message__container input{
     flex-grow: 1;
-    background-color: transparent;
-    border:none;
-    color:rgb(236, 223, 220);
+    height: 3.8rem;
+    width: 8rem;
+    /* background-color:rgb(228, 232, 235); */
+    justify-content: center;
+    align-items:center;
+    color:rgb(22, 19, 19);
+    font-size: 20px;
+    border-radius: 2rem;
 }
+
+
+
+.close_chat{
+    margin-left: 8vw; font-size:25px
+}
+.close_chat:hover{
+    background-color: rgb(221, 233, 233);
+    border-radius: 30px;
+    padding: 0.5rem;
+    cursor: pointer;
+}
+
 .messages{
-    color:white;
+    color:black;
     list-style: none;
+    padding-left: 1rem;
+    padding-right: 0.8rem;
+    font-size: 25px;
+    font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-weight:var(--main-darklg);
 }
 
 .message {
@@ -139,14 +208,18 @@ padding:5px;
   
   .message > b > i {
     margin-right: 0.7rem;
-    font-size: 1.5rem;
+    font-size: 1.3rem;
   }
   
   .message > span {
-    background-color: #3f3b3b;
-    margin: 1rem 0;
-    padding: 1rem;
-    border-radius: 5px;
+    background-color:rgb(218, 211, 211);
+    margin: 0.6rem 0;
+    padding: 0.6rem;
+    /* border-radius: 3px; */
+    border-top-left-radius: 28px;
+    border-top-right-radius: 28px;
+    border-bottom-left-radius: 28px;
+    border-bottom-right-radius: 28px;
   }
 
 
