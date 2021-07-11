@@ -6,12 +6,15 @@ myVideo.muted=true;
 var peer = new Peer(undefined,{
     path:'/peerjs',
     host:'/',
-    port:'3030'
+    port:'443'
 
 });
 
-alert('Welcome to Micro-teams!');
-const  username = prompt("Please enter your name");
+var currentpeer;
+var peerlist=[];
+
+
+const  username = prompt("Enter a username");
 
 let myVideoStream
 const peers ={};
@@ -27,6 +30,9 @@ navigator.mediaDevices.getUserMedia({
         const video = document.createElement('video')
         call.on('stream',userVideoStream =>{
             addVideoStream(video,userVideoStream)
+            currentpeer=call.peerConnection
+            peerlist.push(call.peer)
+
         });
     });
    socket.on('user-connected',(userId)=>{
@@ -47,13 +53,9 @@ const connectToNewUser= (userId,stream)=> {
  call.on('stream',userVideoStream => {
     addVideoStream(video,userVideoStream)
  })
-
- call.on('close',()=>{
-   video.remove()
- })
-
- peers[userId]=call
 }
+
+
 
 
 
@@ -65,12 +67,31 @@ const addVideoStream = (video,stream)=>{
   videoGrid.append(video);
 }
 
-socket.on('user-disconnected',userId =>{
-  if(peers[userId]) peers[userId].close()
-})
+
 
 
 //chat-box
+
+//open chat-box
+
+let open=document.querySelector(".open_chat");
+let leftc=document.querySelector(".main__left");
+let rightc=document.querySelector(".main__right");
+let closec=document.querySelector(".close_chat");
+
+open.addEventListener("click",(e)=>{
+    rightc.style.display="flex";
+    rightc.style.flex="0.21";
+    leftc.style.display="flex";
+    leftc.style.flex="0.79";
+});
+
+closec.addEventListener("click",(e)=>{
+  leftc.style.display="flex";
+  leftc.style.flex="1";
+  rightc.style.display="none";
+});
+
 
 let text = document.querySelector("#chat_message");
 let send = document.getElementById("send");
@@ -111,14 +132,24 @@ const scrollToBottom=() =>{
 
 
 //invite people
+
+alert('click on add people icon to invite')
 const inviteButton = document.querySelector("#Invite");
 
+
+
 inviteButton.addEventListener("click", (e) => {
+
+  //alert(location.hostname);
   prompt(
-    "Copy and send this to add people",
-    window.location.href
+    "Invite people with this room-code",
+    window.location.pathname
   );
 });
+
+
+//audio
+
 const muteUnmute = () => {
     const enabled = myVideoStream.getAudioTracks()[0].enabled;
     if(enabled){
@@ -133,16 +164,16 @@ const muteUnmute = () => {
 
 const setMuteButton = () => {
     const html = `
-      <i class="fas fa-microphone"></i>
-      <span>Mute</span>
+      <i  title ="mute" class="fas fa-microphone"></i>
+      
     `
     document.querySelector('.main__mute_button').innerHTML = html;
   }
 
 const setUnmuteButton = () => {
     const html = `
-      <i class="unmute fas fa-microphone-slash"></i>
-      <span>Unmute</span>
+      <i  title="unmute" class="unmute fas fa-microphone-slash"></i>
+     
     `
     document.querySelector('.main__mute_button').innerHTML = html;
   }
@@ -161,18 +192,112 @@ const setUnmuteButton = () => {
   }
   const setStopVideo = () => {
     const html = `
-      <i class="fas fa-video"></i>
-      <span>Stop Video</span>
+      <i  title ="turn off" class="fas fa-video"></i>
+     
     `
     document.querySelector('.main__video_button').innerHTML = html;
   }
 
   const setPlayVideo = () => {
     const html = `
-    <i class="stop fas fa-video-slash"></i>
-      <span>Play Video</span>
+    <i  title="turn on" class="stop fas fa-video-slash"></i>
+     
     `
     document.querySelector('.main__video_button').innerHTML = html;
+    
   }
 
+
+
+  //sharescreen
+
+  let screenShare = document.querySelector('.screenshare');
+  let stopscreenShare = document.querySelector('.stopshare');
+
+
+  screenShare.addEventListener('click', function (e) 
+    {
+        navigator.mediaDevices.getDisplayMedia
+        ({
+            video: 
+            {
+              cursor: 'always'
+            },
+            audio: 
+            {
+              echoCancellation: true,
+              noiceSuppression: true
+            }
+        })
+        .then(function (stream)
+        {
+            let videoTrack = stream.getVideoTracks()[0]
+            let sender = currentpeer.getSenders().find(function (s) 
+
+            {
+              return s.track.kind == videoTrack.kind
+            })
+            sender.replaceTrack(videoTrack)
+            
+            
+
+        })
+        .catch(function (err) 
+        {
+            console.log(err + 'unable to get display')
+        })
+    })
+
+    stopscreenShare.addEventListener('click', function (e) 
+    {
+      let videoTrack = myVideoStream.getVideoTracks()[0]
+            let sender = currentpeer.getSenders().find(function (s) 
+            {
+              
+              return s.track.kind == videoTrack.kind
+            })
+            sender.replaceTrack(videoTrack)
+    })
+
+
+
+
+    //video enlarge
+   
+    myVideo.addEventListener('click',function(e){
+      if (myVideo.requestFullscreen) {
+        myVideo.requestFullscreen();
+      } else if (myVideo.msRequestFullscreen) {
+        myVideo.msRequestFullscreen();
+      } else if (myVideo.mozRequestFullScreen) {
+        myVideo.mozRequestFullScreen();
+      } else if (myVideo.webkitRequestFullscreen) {
+        myVideo.webkitRequestFullscreen();
+      }
+    })
+
+
+//leave meet
+
+let meetingLeave = document.querySelector('.leave_meeting');
+  meetingLeave.addEventListener("click", function () {
+    leaveMeeting();
+    peer.on("call", (call) => {
+      userVideoStream=null;
+      call.close();
+    });
+ 
+  });
+function leaveMeeting() {
+  closeVideoCall();
+}
+
+function closeVideoCall() {
+
+ 
+ 
+  videoGrid.srcObject.getTracks().forEach((track) => track.stop());
+   //remoteVideo.remove();
+   videoGrid.remove();
+};
   //https://sleepy-springs-59737.herokuapp.com/
