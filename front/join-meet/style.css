@@ -31,7 +31,7 @@
 
 .inp{
     height: 3vh;
-    width: 20vw;
+    width: 15vw;
 }
 
 .main{
@@ -64,19 +64,44 @@
     text-align: center;
     text-decoration: none;
     display: inline-block;
-    font-size: 16px;
+    font-size: 20px;
     margin: 4px 3px;
     cursor: pointer;
 }
 
-.images{
+ .images{ 
 
  
     margin-top: 14vh;
-    margin-left:10vw;
+
 }
 
-img:hover {
+/* img:hover { 
   -webkit-transform: scaleX(-1);
   transform: scaleX(-1);
+}*/
+
+.image-stack::after {
+  content: ' ';
+  display: table;
+  clear: both;
+}
+
+.image-stack__item--top {
+   
+    float: left;
+  
+    width: 90%;
+    margin-right: -100%;
+    padding-top: 24%; 
+    position: relative;
+    z-index: 1;
+}
+
+.image-stack__item--bottom {
+    float: right;
+    width: 80%;
+}
+.img{
+    width: 100%;
 }
