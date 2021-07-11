@@ -14,6 +14,8 @@ firebase.initializeApp(firebaseConfig);
 const auth = firebase.auth()
 const database = firebase.database()
 
+alert('Signup first if new user!');
+
 // Set up our register function
 function register () {
   // Get all our input fields
@@ -101,11 +103,11 @@ function login () {
     // DOne
     firebase.auth().onAuthStateChanged(user => {
       if(user) {
-        window.location = '..//join-meet/index.html'; //After successful login, user will be redirected to home.html
+        window.location = '..//join-meet/index.html'; //After successful login, user will be redirected 
       }
     });
    
-    alert('User Logged In!!')
+    alert('Login successful!')
 
   })
   .catch(function(error) {
