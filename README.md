@@ -10,8 +10,6 @@ This project is made for the MICROSOFT ENGAGE 2021 challenge.
 - Peerjs  for handling the media-devices (audio and video)
 - Firebase for authentication 
 
-### The repo contains three folders and some parts have to be deployed separately . 
-
 
 ## How to run locally:
 
@@ -25,10 +23,24 @@ This project is made for the MICROSOFT ENGAGE 2021 challenge.
 - run `nodemon server1.s` to start 
 - visit http://localhost:3000/
 
+### For the  External Chat-room
+- 
+
 ### For the complete website:
 
 - Go to `front` folder
 - open `index.html` with live server
+
+#Features
+
+- Authentication system
+- An external chat-room where one can chat before and after meeting
+- The video call page which 
+--  supports group video call
+-- In call chat-box
+-- Screen-Sharing 
+-- Collaborative whiteboard
+
 
 
 https://micro-final-teams.herokuapp.com/
