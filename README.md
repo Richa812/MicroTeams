@@ -10,7 +10,7 @@ This project is made for the MICROSOFT ENGAGE 2021 challenge.
 - Peerjs  for handling the media-devices (audio and video)
 - Firebase for authentication 
 
-## The repo contains three folders and some parts have to be deployed separately . 
+### The repo contains three folders and some parts have to be deployed separately . 
 
 
 ## How to run locally:
@@ -27,8 +27,8 @@ This project is made for the MICROSOFT ENGAGE 2021 challenge.
 
 ### For the complete website:
 
--Go to `front` folder
--open `index.html` with live server
+- Go to `front` folder
+- open `index.html` with live server
 
 
 https://micro-final-teams.herokuapp.com/
