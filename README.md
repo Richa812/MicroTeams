@@ -21,7 +21,7 @@ This project is made for the MICROSOFT ENGAGE 2021 challenge.
 - run `cd MicroTeams`
 - run `npm install` to install the dependencies
 - run `nodemon server1.s` to start 
-- visit http://localhost:3000/
+- visit http://localhost:3030/
  
 
 ### For the complete website:
