@@ -22,25 +22,28 @@ This project is made for the MICROSOFT ENGAGE 2021 challenge.
 - run `npm install` to install the dependencies
 - run `nodemon server1.s` to start 
 - visit http://localhost:3000/
-
-### For the  External Chat-room
-- 
+ 
 
 ### For the complete website:
 
 - Go to `front` folder
 - open `index.html` with live server
 
-#Features
+## Features
 
 - Authentication system
 - An external chat-room where one can chat before and after meeting
-- The video call page which 
---  supports group video call
--- In call chat-box
--- Screen-Sharing 
--- Collaborative whiteboard
+- Group video-calling
+- Screen Sharing option
+- Full screen video by clicking on the video
+- In-call chat-box 
+- Collaborative whiteboard
 
 
 
-https://micro-final-teams.herokuapp.com/
+> see hosted version: (https://micro-final-teams.herokuapp.com/)<br>
+> for best results use chrome browser
+
+
+
+
